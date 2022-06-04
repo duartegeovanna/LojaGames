@@ -1,5 +1,6 @@
 package com.generation.lojagames.controller;
 
+// ESSA CATEGORIACONTROLLER PERTENCE A LOJA GAMES
 import java.util.List;
 
 import javax.validation.Valid;
@@ -46,10 +47,8 @@ public class CategoriaController {
 	}
 	
 	@PostMapping
-	public ResponseEntity<Categoria> postCategoria(@Valid @RequestBody Categoria categoria){
-		if (categoriaRepository.existsById(categoria.getId())) 
+	public ResponseEntity<Categoria> postCategoria(@Valid @RequestBody Categoria categoria){ 
 			return ResponseEntity.status(HttpStatus.CREATED).body(categoriaRepository.save(categoria));
-		return ResponseEntity.status(HttpStatus.BAD_REQUEST).build(); 	
 	}
 	
 	@PutMapping

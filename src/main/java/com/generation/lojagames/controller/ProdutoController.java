@@ -1,5 +1,6 @@
 package com.generation.lojagames.controller;
 
+// ESSA PRODUTOCONTROLLER PERTENCE A LOJA GAMES 
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -77,13 +78,6 @@ public class ProdutoController {
 		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 	}
 	
-	@PutMapping("/preco/{preco}")
-	public ResponseEntity<Produto> putPreco(@Valid @RequestBody Produto produto){
-		if (produtoRepository.existsById(produto.getPreco())) {
-			return ResponseEntity.status(HttpStatus.OK).body(produtoRepository.save(produto));
-		}
-		return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-	}
 	
 	@DeleteMapping("/{id}")
     public ResponseEntity<?> deleteProduto(@PathVariable Long id) {
